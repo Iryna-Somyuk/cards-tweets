@@ -1,14 +1,26 @@
+
 import { Contact } from '../Contact/Contact';
+import { ListContacts } from './ContactsList.styled';
 import { useSelector } from 'react-redux';
-import { selectFilteredContacts } from 'redux/selector';
+import { useState } from 'react';
+import { selectContacts } from 'redux/selector';
 
 export const ContactsList = () => {
-  const contacts = useSelector(selectFilteredContacts);
+  const users = useSelector(selectContacts);
+  const [noOfElement, setNoOfElement] = useState(3);
+  const slice = users.slice(0, noOfElement);
+
+  const handleLoadMore = () => {
+    setNoOfElement(noOfElement + noOfElement);
+  }
   return (
-    <ul className="flex flex-col gap-2">
-      {contacts.map(contact => (
-        <Contact key={contact.id} contact={contact} />
+    <div>
+    <ListContacts>
+      {slice.map(user => (
+        <Contact key={user.id} user={user}/>
       ))}
-    </ul>
+    </ListContacts>
+    <button onClick={handleLoadMore}>Load More</button>
+    </div>
   );
 };
