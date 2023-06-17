@@ -1,12 +1,12 @@
 import { FilterContainer, FilterBtn } from './Filter.styled';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { statusFilters } from "../../redux/constans";
 import { setFilter } from 'redux/filterSlice';
-import { selectFilter } from 'redux/selector';
+// import { selectFilter } from 'redux/selector';
 
 export const Filter = () => {
 
-  const filter = useSelector(selectFilter);
+  // const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
   const handleFilterChange = filter => {
     dispatch(setFilter(filter));
