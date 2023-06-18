@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { selectContacts, selectFilters } from 'redux/selector';
 import { statusFilters } from '../../redux/constans'
+import { Filter } from 'components/Filter/Filter';
 
 const getVisibleTasks = (users, statusFilter) => {
   switch (statusFilter) {
@@ -33,6 +34,7 @@ export const ContactsList = () => {
   }
   return (
     <>
+    <Filter/>
     <ul className='flex flex-wrap gap-2'>
       {slice.map(user => (
         <Contact key={user.id} user={user}/>
