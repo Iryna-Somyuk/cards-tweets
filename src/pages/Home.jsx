@@ -6,17 +6,17 @@ const Home = () => {
       <div className="md:relative md:flex md:flex-col md:w-2/4 md:text-left  md:items-start ">
         <h1 className="mb-4 text-2xl xl:text-3xl font-black fontFamily-serif text-center">
           Welcome to the{' '}
-          <span className="uppercase text-sky-600">phonebook</span> application!{' '}
+          <span className="uppercase text-purple-800">tweets</span> list!{' '}
         </h1>
         <span className="text-lg text-justify ">
           Allowing you to add new contacts and edit existing ones, view lists
           and more, and you'll never forget anyone! To start working with the
           Phonebook, you need to{' '}
           <a
-            className="text-lg text-sky-700 underline italic hover:text-orange"
-            href="/goit-react-hw-08-phonebook/register"
+            className="text-lg text-purple-800 underline italic hover:text-orange"
+            href="/cards-tweets/tweets"
           >
-            Register
+         Tweets
           </a>
         </span>
       </div>

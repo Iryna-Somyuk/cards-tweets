@@ -30,12 +30,9 @@ export const DeleteBtn = styled.button`
 
   border: none;
   border-radius: 4px;
-  background-color: rgb(210, 156, 241);
+  background-color: ${props => props.isFollowing ? 'gray' : 'blue'};
+
   color: black;
   font-size: 16px;
-  &:hover,
-  &:focus,
-  &:active {
-    background-color: rgb(210, 110, 241);
-  }
+
 `;

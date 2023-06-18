@@ -17,14 +17,15 @@ export const fetchContacts = createAsyncThunk(
 
 
 // export const editingContact = createAsyncThunk(
-//   'contacts/editingContact',
-//   async (contact, thunkAPI) => {
+//   'users/editingContact',
+//   async (user, thunkAPI) => {
 //     try {
-//       const response = await axios.patch(`/contacts/${contact.id}`, {
-//         name: contact.name,
-//         number: contact.number,
+//       const response = await axios.patch(`/users/${user.id}`, {
+//         followers: user.followers,
 //       });
+//       console.log(response.data);
 //       return response.data;
+
 //     } catch (error) {
 //       return thunkAPI.rejectWithValue(error.message);
 //     }

@@ -26,10 +26,12 @@ module.exports = {
         'gray-dark': '#273444',
         'gray': '#8492a6',
         'gray-light': '#d3dce6',
+    
       },
       fontFamily: {
         sans: ['Graphik', 'sans-serif'],
         serif: ['Merriweather', 'serif'],
+        fontMoserrat: ['Montserrat'],
       },
 
       backgroundImage: {
@@ -37,8 +39,9 @@ module.exports = {
     
       },
       boxShadow: {
-        '3xl': '0 15px 10px -15px rgba(0, 0, 0, 0.3)',
-      }
+        '3xl': '-2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23)',
+      }, 
+ 
     },
   },
   plugins: [],
