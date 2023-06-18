@@ -3,15 +3,31 @@ import { useState } from 'react';
 // import { ContactItem, ContactInfo, DeleteBtn } from './Contact.styled';
 import Logo  from "../../images/Logo.png";
 import Picture from "../../images/picture.png"
-// import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { editingContact, toggleCompleted } from 'redux/operations';
 // import { selectContacts } from 'redux/selector';
 // import { editingContact } from 'redux/operations';
-// import { followUser, unfollowUser } from '../../redux/contactSlice';
+
 
 export const Contact = ({ user }) => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [count, setCount] = useState(user.followers);
-  const [isEditingBtn, setIsEditingBtn] = useState(false);
+  const [isEditingBtn, setIsEditingBtn] = useState(user.following);
+
+  const handleToggleAdd = () => {
+dispatch(toggleCompleted(user))
+    setIsEditingBtn(true);
+      setCount(prev => prev + 1);
+      dispatch(editingContact({followers: count}))
+  };
+
+  const handleToggleChange = () => {
+    dispatch(toggleCompleted(user))
+    setIsEditingBtn(false);
+      setCount(prev => prev - 1);
+      dispatch(editingContact({followers: count}))
+  };
+
 
 
 
@@ -27,9 +43,9 @@ export const Contact = ({ user }) => {
       </span>
       <span className='mb-[26px] font-medium text-lg text-[#EBD8FF] font-fontMoserrat'>{count} FOLLOWERS</span>
 
-{!isEditingBtn ? (<button className='py-[14px] px-7 w-[196px] h-[50px] rounded-[10px] bg-[#EBD8FF] text-lg  font-fontMoserrat font-semibold' type='button' onClick={() => { setIsEditingBtn(true);
-  setCount(prev => prev + 1);}}>FOLLOW</button>) : (<button className='py-[14px] px-7 w-[196px] h-[50px] rounded-[10px] bg-[#5CD3A8] text-lg  font-fontMoserrat font-semibold' type='button' onClick={() => {setIsEditingBtn(false);
-    setCount(prev => prev - 1)}}>FOLLOWING</button>)}
+{!isEditingBtn ? 
+(<button className='py-[14px] px-7 w-[196px] h-[50px] rounded-[10px] bg-[#EBD8FF] text-lg  font-fontMoserrat font-semibold' type='button' onClick={handleToggleAdd}>FOLLOW</button>) 
+: (<button className='py-[14px] px-7 w-[196px] h-[50px] rounded-[10px] bg-[#5CD3A8] text-lg  font-fontMoserrat font-semibold' type='button' onClick={handleToggleChange}>FOLLOWING</button>)}
 </div>
 
 

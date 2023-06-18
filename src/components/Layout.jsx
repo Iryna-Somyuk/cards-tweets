@@ -2,7 +2,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 // import { Header, Link, Сontainer } from './App.styled';
 import { Suspense } from 'react';
 import { Footer } from './Footer/Footer';
-// import { Filter } from '../components/Filter/Filter';
+import { Filter } from '../components/Filter/Filter';
 
  const Layout = () => {
   return (
@@ -13,8 +13,8 @@ import { Footer } from './Footer/Footer';
     <NavLink  className="curcor-pointer text-gray-dark text-lg font-bold  hover:text-purple-800  active:text-violet-700 hover:underline" to="/">Home</NavLink>
     <NavLink  className="curcor-pointer text-gray-dark text-lg font-bold  hover:text-purple-800  active:text-violet-700 hover:underline" to="/tweets">Tweets</NavLink>
       </nav>
-        {/* <div>        
-    <Filter /></div> */}
+        <div>        
+    <Filter /></div>
       </header>
       <main className='flex items-center justify-center'>
       <Suspense fallback={null}>

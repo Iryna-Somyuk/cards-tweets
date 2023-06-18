@@ -1,14 +1,32 @@
-
 import { Contact } from '../Contact/Contact';
 // import { ListContacts } from './ContactsList.styled';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
-import { selectContacts } from 'redux/selector';
+import { selectContacts, selectFilters } from 'redux/selector';
+import { statusFilters } from '../../redux/constans'
+
+const getVisibleTasks = (users, statusFilter) => {
+  switch (statusFilter) {
+    case statusFilters.follow:
+      return users.filter(user => !user.following);
+    case statusFilters.followings:
+      return users.filter(user => user.following);
+    default:
+      return users;
+  }
+};
 
 export const ContactsList = () => {
   const users = useSelector(selectContacts);
+  const statusFilter = useSelector(selectFilters);
   const [noOfElement, setNoOfElement] = useState(3);
-  const slice = users.slice(0, noOfElement);
+
+  const visibleTasks = getVisibleTasks(users, statusFilter);
+  const slice = visibleTasks.slice(0, noOfElement);
+
+ 
+
+
 
   const handleLoadMore = () => {
     setNoOfElement(noOfElement + noOfElement);
