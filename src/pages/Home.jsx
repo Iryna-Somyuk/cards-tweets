@@ -25,7 +25,7 @@ const Home = () => {
         </span>
       </div>
       <div className="flex w-2/4">
-        <img src={imgHomePage} alt="" className="object-cover" />
+        <img src={imgHomePage} alt="picture user" className="object-cover" />
       </div>
     </div>
   );
