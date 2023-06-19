@@ -1,13 +1,9 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-// import { ContactItem, ContactInfo, DeleteBtn } from './Contact.styled';
-import Logo  from "../../images/Logo.png";
-import Picture from "../../images/picture.png"
+import Logo from '../../images/logo.png';
+import Picture from '../../images/picture.png';
 import { useDispatch } from 'react-redux';
-import { editingContact, toggleCompleted } from 'redux/operations';
-// import { selectContacts } from 'redux/selector';
-// import { editingContact } from 'redux/operations';
-
+import { toggleCompleted } from 'redux/operations';
 
 export const Contact = ({ user }) => {
   const dispatch = useDispatch();
@@ -15,40 +11,55 @@ export const Contact = ({ user }) => {
   const [isEditingBtn, setIsEditingBtn] = useState(user.following);
 
   const handleToggleAdd = () => {
-dispatch(toggleCompleted(user))
     setIsEditingBtn(true);
-      setCount(prev => prev + 1);
-      dispatch(editingContact({followers: count}))
+    setCount(prev => prev + 1);
+    dispatch(toggleCompleted(user));
   };
 
   const handleToggleChange = () => {
-    dispatch(toggleCompleted(user))
     setIsEditingBtn(false);
-      setCount(prev => prev - 1);
-      dispatch(editingContact({followers: count}))
+    setCount(prev => prev - 1);
+    dispatch(toggleCompleted(user));
   };
 
-
-
-
   return (
-    <li className='flex flex-col items-center w-[380px] h-[460px] shadow-3xl rounded-[20px] bg-[#481ea9]'>
-      <img className='mt-5 flex' src={Logo} alt='logo GoIT' />
-      <img className='relative bottom-[14px]' src={Picture} alt='bgPhoto'/>
-      <div className='relative bottom-[32px] flex flex-col items-center '>
-      <img className='mb-[26px] rounded-full border-8  border-[#EBD8FF]' src={user.avatar} alt='avatar user' width={80}/>
+    <li className="flex flex-col items-center w-[380px] h-[460px] shadow-3xl rounded-[20px] bg-[#481ea9]">
+      <img className="relative right-[132px] mt-5" src={Logo} alt="logo GoIT" />
+      <img className="relative bottom-[14px]" src={Picture} alt="bgPhoto" />
+      <div className=" border-[#EBD8FF] border-4 w-full"></div>
+      <img
+        className=" relative bottom-[40px] rounded-full border-8  border-[#EBD8FF]"
+        src={user.avatar}
+        alt="avatar user"
+        width={80}
+      />
 
-      <span className='mb-4 font-medium text-lg text-[#EBD8FF] font-fontMoserrat'>
-        {user.tweets} TWEETS
-      </span>
-      <span className='mb-[26px] font-medium text-lg text-[#EBD8FF] font-fontMoserrat'>{count} FOLLOWERS</span>
+      <div className=" relative bottom-3 flex flex-col items-center">
+        <span className="mb-4 font-medium uppercase text-lg text-[#EBD8FF] font-fontMoserrat">
+          {user.tweets} tweets
+        </span>
+        <span className="mb-[26px] font-medium uppercase text-lg text-[#EBD8FF] font-fontMoserrat">
+          {count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} followers
+        </span>
 
-{!isEditingBtn ? 
-(<button className='py-[14px] px-7 w-[196px] h-[50px] rounded-[10px] bg-[#EBD8FF] text-lg  font-fontMoserrat font-semibold' type='button' onClick={handleToggleAdd}>FOLLOW</button>) 
-: (<button className='py-[14px] px-7 w-[196px] h-[50px] rounded-[10px] bg-[#5CD3A8] text-lg  font-fontMoserrat font-semibold' type='button' onClick={handleToggleChange}>FOLLOWING</button>)}
-</div>
-
-
+        {!isEditingBtn ? (
+          <button
+            className="py-[14px] px-7 w-[196px] h-[50px] rounded-[10px] bg-[#EBD8FF] uppercase text-lg  font-fontMoserrat font-semibold"
+            type="button"
+            onClick={handleToggleAdd}
+          >
+            follow
+          </button>
+        ) : (
+          <button
+            className="py-[14px] px-7 w-[196px] h-[50px] rounded-[10px] bg-[#5CD3A8] uppercase text-lg  font-fontMoserrat font-semibold"
+            type="button"
+            onClick={handleToggleChange}
+          >
+            following
+          </button>
+        )}
+      </div>
     </li>
   );
 };
