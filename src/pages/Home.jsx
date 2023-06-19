@@ -2,7 +2,7 @@ import imgHomePage from '../images/imgHomePage.jpg';
 
 const Home = () => {
   return (
-    <div className="flex flex-col-reverse items-center mt-6 md:mt-0 md:flex-row">
+    <div className="py-4 flex flex-col-reverse items-center mt-6 md:mt-0 md:flex-row">
       <div className="md:relative md:flex md:flex-col md:w-2/4 md:text-left  md:items-start ">
         <h1 className="mb-4 text-2xl xl:text-3xl font-black fontFamily-serif text-center">
           Welcome to the{' '}
