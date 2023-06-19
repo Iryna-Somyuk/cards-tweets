@@ -17,20 +17,14 @@ export const contactSlice = createSlice({
         state.items = action.payload;
       })
       .addCase(toggleCompleted.fulfilled, (state, action) => {
-
-        const i = state.items.findIndex(
-          user => user.id === action.payload.id  
-        );
+        const i = state.items.findIndex(user => user.id === action.payload.id);
         state.items.splice(i, 1, {
           ...state.items[i],
           following: action.payload.following,
           followers: action.payload.followers,
-          
         });
       })
-   
 
-   
       .addMatcher(isAnyOf(...getActions('pending')), state => {
         state.isLoading = true;
       })
@@ -44,6 +38,5 @@ export const contactSlice = createSlice({
       });
   },
 });
-
 
 export const contactReducer = contactSlice.reducer;

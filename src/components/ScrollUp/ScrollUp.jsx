@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FcUpload } from "react-icons/fc";
-
+import { FcUpload } from 'react-icons/fc';
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,7 +29,7 @@ const ScrollToTopButton = () => {
       className={`scroll-to-top ${isVisible ? 'visible' : 'hidden'}`}
       onClick={scrollToTop}
     >
-   <FcUpload size={50}/>
+      <FcUpload size={40} />
     </button>
   );
 };

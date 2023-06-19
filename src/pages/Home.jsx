@@ -6,17 +6,21 @@ const Home = () => {
       <div className="md:relative md:flex md:flex-col md:w-2/4 md:text-left  md:items-start ">
         <h1 className="mb-4 text-2xl xl:text-3xl font-black fontFamily-serif text-center">
           Welcome to the{' '}
-          <span className="uppercase text-purple">tweets</span> list!{' '}
+          <span className="uppercase text-purple">tweets list!</span>{' '}
         </h1>
         <span className="text-lg text-justify ">
-          Allowing you to add new contacts and edit existing ones, view lists
-          and more, and you'll never forget anyone! To start working with the
-          Phonebook, you need to{' '}
+          Allows you with the help of a convenient list of tweet cards to
+          subscribe to the authors you are interested in following. Also thanks
+          to the convenient card filter, you will be able to get a list of cards
+          to which you have subscribed and not subscribed, so that you do not
+          forget about anyone! :) To start working with the{' '}
+          <span className="uppercase text-purple">tweets list</span>, you need
+          to{' '}
           <a
             className="text-lg text-purple underline italic hover:text-orange"
             href="/cards-tweets/tweets"
           >
-         Tweets
+            Tweets
           </a>
         </span>
       </div>

@@ -1,1 +1,2 @@
 # Tweets app
+This project allows using a convenient list of tweet cards to subscribe to authors that are interesting to follow or, conversely, to unsubscribe. Alsothanks to the convenient card filter, you will be able to get a list of cards to which you have subscribed and not subscribed, so that you do not forget about anyone!

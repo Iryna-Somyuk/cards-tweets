@@ -28,7 +28,7 @@ export const Contact = ({ user }) => {
       <img className="relative bottom-[14px]" src={Picture} alt="bgPhoto" />
       <div className=" border-lightPurple border-4 w-full"></div>
       <img
-        className=" relative bottom-[40px] rounded-full border-8  border-lightPurple"
+        className=" relative bottom-[40px] rounded-full border-8 border-lightPurple"
         src={user.avatar}
         alt="avatar user"
         width={80}
