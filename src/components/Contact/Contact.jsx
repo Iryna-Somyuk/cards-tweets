@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import Logo from '../../images/logo.png';
+import Logo from '../../images/Logo.png';
 import Picture from '../../images/picture.png';
 import { useDispatch } from 'react-redux';
 import { toggleCompleted } from 'redux/operations';
