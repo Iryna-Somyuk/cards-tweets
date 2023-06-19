@@ -23,28 +23,28 @@ export const Contact = ({ user }) => {
   };
 
   return (
-    <li className="flex flex-col items-center w-[380px] h-[460px] shadow-3xl rounded-[20px] bg-[#481ea9]">
+    <li className="flex flex-col items-center w-[380px] h-[460px] shadow-3xl rounded-[20px] bg-purple">
       <img className="relative right-[132px] mt-5" src={Logo} alt="logo GoIT" />
       <img className="relative bottom-[14px]" src={Picture} alt="bgPhoto" />
-      <div className=" border-[#EBD8FF] border-4 w-full"></div>
+      <div className=" border-lightPurple border-4 w-full"></div>
       <img
-        className=" relative bottom-[40px] rounded-full border-8  border-[#EBD8FF]"
+        className=" relative bottom-[40px] rounded-full border-8  border-lightPurple"
         src={user.avatar}
         alt="avatar user"
         width={80}
       />
 
       <div className=" relative bottom-3 flex flex-col items-center">
-        <span className="mb-4 font-medium uppercase text-lg text-[#EBD8FF] font-fontMoserrat">
+        <span className="mb-4 font-medium uppercase text-lg text-lightPurple font-fontMoserrat">
           {user.tweets} tweets
         </span>
-        <span className="mb-[26px] font-medium uppercase text-lg text-[#EBD8FF] font-fontMoserrat">
+        <span className="mb-[26px] font-medium uppercase text-lg text-lightPurple font-fontMoserrat">
           {count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} followers
         </span>
 
         {!isEditingBtn ? (
           <button
-            className="py-[14px] px-7 w-[196px] h-[50px] rounded-[10px] bg-[#EBD8FF] uppercase text-lg  font-fontMoserrat font-semibold"
+            className="py-[14px] px-7 w-[196px] h-[50px] rounded-[10px] bg-lightPurple uppercase text-lg  font-fontMoserrat font-semibold"
             type="button"
             onClick={handleToggleAdd}
           >
@@ -52,7 +52,7 @@ export const Contact = ({ user }) => {
           </button>
         ) : (
           <button
-            className="py-[14px] px-7 w-[196px] h-[50px] rounded-[10px] bg-[#5CD3A8] uppercase text-lg  font-fontMoserrat font-semibold"
+            className="py-[14px] px-7 w-[196px] h-[50px] rounded-[10px] bg-green uppercase text-lg  font-fontMoserrat font-semibold"
             type="button"
             onClick={handleToggleChange}
           >

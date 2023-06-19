@@ -17,11 +17,11 @@ const [isOpen, setIsOpen] = useState(false);
   
   return (
     <div className='relative mb-5'>
-    <button className='flex items-center justify-between py-3 px-7 w-[150px] h-[50px] uppercase font-semibold font-fontMoserrat text-slate-50 text-center border-0 rounded-[10px] bg-[#481ea9]' type='button' onClick={() => setIsOpen(prev => !prev)}>
+    <button className='flex items-center justify-between py-3 px-7 w-[150px] h-[50px] uppercase font-semibold font-fontMoserrat text-slate-50 text-center border-0 rounded-[10px] bg-purple' type='button' onClick={() => setIsOpen(prev => !prev)}>
      filter {!isOpen ? <AiOutlineCaretDown/> : <AiOutlineCaretUp/> }
     </button>
     {isOpen && 
-    (<div className='absolute z-10 flex flex-col w-[150px] rounded-[10px] shadow-3xl text-slate-50 bg-[#481ea9]'> 
+    (<div className='absolute z-10 flex flex-col w-[150px] rounded-[10px] shadow-3xl text-slate-50 bg-purple'> 
       <button className='font-Monserrat font-medium text-start uppercase w-full py-2 px-7 hover:underline' type='button' onClick={() => handleFilterChange(statusFilters.all)}>show all</button>
    <button className='font-Monserrat font-medium text-start uppercase w-full py-2 px-7 hover:underline' type='button' onClick={() => handleFilterChange(statusFilters.follow)}>follow</button>
   <button className='font-Monserrat font-medium text-start uppercase w-full py-2 px-7 hover:underline' type='button' onClick={() => handleFilterChange(statusFilters.followings)}>followings</button>

@@ -6,6 +6,7 @@ import { Contact } from '../Contact/Contact';
 import { HiOutlineArrowLongLeft } from "react-icons/hi2";
 import { Filter } from 'components/Filter/Filter';
 import { NavLink } from 'react-router-dom';
+import ScrollToTopButton from 'components/ScrollUp/ScrollUp';
 
 const getVisibleFollowings = (users, statusFilter) => {
   switch (statusFilter) {
@@ -37,7 +38,7 @@ export const ContactsList = () => {
     <>
       <div className='flex justify-between items-center'>
         <NavLink
-          className='inline-flex  gap-2 items-center justify-center uppercase text-[#481ea9] w-32 h-8 px-2 py-1 text-sm hover:font-semibold border-2 border-[#481ea9] rounded-[10px] hover:border-4 curcor-pointer'
+          className='inline-flex  gap-2 items-center justify-center uppercase text-purple w-32 h-8 px-2 py-1 text-sm hover:font-semibold border-2 border-purple rounded-[10px] hover:border-4 curcor-pointer'
           to='/'
         >
           <HiOutlineArrowLongLeft />
@@ -52,16 +53,18 @@ export const ContactsList = () => {
       </ul>
       {isLoadMoreVisible ? (
         <button
-          className='mt-4 py-3 px-7 w-[196px] h-[50px] flex items-center justify-center uppercase font-semibold font-fontMoserrat text-slate-50 hover:text-slate-900 text-center border-0 rounded-[10px] bg-[#481ea9] hover:bg-[#EBD8FF]'
+          className='mt-4 py-3 px-7 w-[196px] h-[50px] flex items-center justify-center uppercase font-semibold font-fontMoserrat text-slate-50 hover:text-slate-900 text-center border-0 rounded-[10px] bg-purple hover:bg-lightPurple'
           onClick={handleLoadMore}
-        >
-          load more
+        > load more
         </button>
-      ) : (
-        <p className='mt-4 text-[#481ea9] text-center'>
-          No more cards available.
-        </p>
+      ) : (<div>
+        <p className='mt-4  text-purple text-lg text-center font-semibold font-fontMoserrat'>
+          No more cards available :( 
+        </p>     
+        <ScrollToTopButton/>
+        </div>
       )}
+  
     </>
   );
 };
